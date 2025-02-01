@@ -1,3 +1,5 @@
+<img src="https://www.devute.co.uk/wp-content/uploads/2025/02/banner.svg" alt="Logo Carousel by Devute" style="width:100%; height:auto;" />
+
 # Logo Carousel by Devute
 
 A powerful and flexible WordPress plugin for creating responsive logo carousels with infinite scroll animation.
