@@ -1,0 +1,16 @@
+{
+    "host": "ftp.gb.stackcp.com",
+    "username": "devute.co.uk",
+    "password": ",xyy3iX.R8W0",
+    "remotePath": "/public_html/wp-content/plugins/Logo-Carousel-By-Devute",
+    "protocol": "ftp",
+    "port": 0,
+    "fileNameEncoding": "utf8",
+    "autoUpload": true,
+    "autoDelete": true,
+    "autoDownload": true,
+    "ignore": [
+        ".git",
+        "/.vscode"
+    ]
+} 

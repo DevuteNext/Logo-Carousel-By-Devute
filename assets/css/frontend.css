@@ -1,0 +1,40 @@
+.logo-carousel {
+    padding: 40px 0;
+    overflow: hidden;
+    background: #fff;
+}
+
+.logo-track {
+    display: flex;
+    animation: logo-scroll linear infinite;
+}
+
+.logo-item {
+    flex: 0 0 200px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-item img {
+    max-width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.logo-item:hover img {
+    filter: grayscale(0%);
+}
+
+@keyframes logo-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+@media (max-width: 768px) {
+    .logo-item {
+        flex: 0 0 150px;
+    }
+}
