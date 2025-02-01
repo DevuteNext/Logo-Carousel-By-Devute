@@ -1,12 +1,19 @@
+.logo-carousel-container {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
 .logo-carousel {
     padding: 40px 0;
+    background: #ffffff;
+    position: relative;
     overflow: hidden;
-    background: #fff;
 }
 
 .logo-track {
     display: flex;
-    animation: logo-scroll linear infinite;
+    width: fit-content;
 }
 
 .logo-item {
@@ -28,13 +35,46 @@
     filter: grayscale(0%);
 }
 
-@keyframes logo-scroll {
+/* Improved animations for both directions */
+@keyframes logo-scroll-normal {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
+    100% { transform: translateX(calc(-50%)); }
+}
+
+@keyframes logo-scroll-reverse {
+    0% { transform: translateX(calc(-50%)); }
+    100% { transform: translateX(0); }
+}
+
+.logo-carousel[data-direction="normal"] .logo-track {
+    animation: logo-scroll-normal linear infinite;
+}
+
+.logo-carousel[data-direction="reverse"] .logo-track {
+    animation: logo-scroll-reverse linear infinite;
+}
+
+/* Pause on hover */
+.logo-carousel[data-pause-hover="yes"]:hover .logo-track {
+    animation-play-state: paused;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .logo-item {
+        flex: 0 0 180px;
+    }
 }
 
 @media (max-width: 768px) {
     .logo-item {
         flex: 0 0 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-item {
+        flex: 0 0 120px;
+        padding: 10px;
     }
 }

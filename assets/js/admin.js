@@ -2,16 +2,16 @@ jQuery(document).ready(function($) {
     // Media uploader
     var mediaUploader;
     
-    $('#add_slider_images, .add-images').on('click', function(e) {
+    $('#add_slider_images').on('click', function(e) {
         e.preventDefault();
 
-        // If the uploader object has already been created, reopen the dialog
+        // If uploader exists, reopen
         if (mediaUploader) {
             mediaUploader.open();
             return;
         }
 
-        // Create the media uploader
+        // Create media uploader
         mediaUploader = wp.media({
             title: 'Select Images for Slider',
             button: {
@@ -20,7 +20,7 @@ jQuery(document).ready(function($) {
             multiple: true
         });
 
-        // When images are selected, run callback
+        // When images selected
         mediaUploader.on('select', function() {
             var attachments = mediaUploader.state().get('selection').toJSON();
             var html = '';
@@ -29,8 +29,7 @@ jQuery(document).ready(function($) {
                 html += `
                     <div class="image-item" data-id="${attachment.id}">
                         <div class="image-preview">
-                            <img src="${attachment.sizes.thumbnail ? attachment.sizes.thumbnail.url : attachment.url}" 
-                                 style="max-width: 150px; height: auto;">
+                            <img src="${attachment.sizes.thumbnail ? attachment.sizes.thumbnail.url : attachment.url}">
                         </div>
                         <div class="image-info">
                             <input type="text" 
@@ -48,7 +47,6 @@ jQuery(document).ready(function($) {
             $('#logo_images_container').append(html);
         });
 
-        // Open the uploader dialog
         mediaUploader.open();
     });
 
@@ -64,6 +62,7 @@ jQuery(document).ready(function($) {
         items: '.image-item',
         cursor: 'move',
         opacity: 0.6,
-        handle: '.image-preview'
+        handle: '.image-preview',
+        placeholder: 'image-item ui-sortable-placeholder'
     });
 });
