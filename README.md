@@ -40,7 +40,7 @@ Each slider can be customized with the following options:
 
 ## Support
 
-For support and feature requests, please visit [Devute.com](https://devute.com) or email us at support@devute.com
+For support and feature requests, please visit [Devute.com](https://devute.com) or email us at info@devute.com
 
 ## About Devute
 
