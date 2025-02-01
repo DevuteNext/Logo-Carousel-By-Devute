@@ -14,11 +14,13 @@
 .logo-track {
     display: flex;
     width: fit-content;
+    gap: 50px; /* Add consistent gap between items */
+    padding: 0 30px; /* Add padding on sides */
 }
 
 .logo-item {
-    flex: 0 0 200px;
-    padding: 20px;
+    flex: 0 0 120px; /* Reduced fixed width */
+    height: 60px; /* Fixed height for consistency */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,7 +28,10 @@
 
 .logo-item img {
     max-width: 100%;
+    max-height: 100%;
+    width: auto;
     height: auto;
+    object-fit: contain;
     filter: grayscale(100%);
     transition: filter 0.3s ease;
 }
